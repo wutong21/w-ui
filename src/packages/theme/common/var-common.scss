@@ -1,0 +1,297 @@
+@import '../mixins/_color-helpers';
+
+/* color helper
+-------------------------- */
+@function shade($color, $percentage) {
+  @return mix($--color-black, $color, $percentage);
+}
+
+@function tint($color, $percentage) {
+  @return mix($--color-white, $color, $percentage);
+}
+
+@function blanch($color, $percentage) {
+  @return tint($color, 100% - $percentage);
+}
+
+/* Colors
+-------------------------- */
+
+/* 背景色 */
+$--fill: #fff !default;
+
+/* 固定色 */
+$--color-white: #fff !default;
+$--color-black: #000 !default;
+$--color-brand: #e72528 !default;
+
+/* 情景色 */
+// 成功
+$--color-success: #02bf0f !default;
+
+// 告警
+$--color-warning: #ff952c !default;
+
+// 提醒
+$--color-remind: #fc0 !default;
+
+// 提示 与 链接色
+$--color-info: #2196f3 !default;
+
+// 危险
+$--color-danger: #fa3239 !default;
+
+/* brand-x 纯梯度色 */
+// #eb5052 - 主题色 80%
+$--color-brand-80: blanch($--color-brand, 80%) !default;
+
+// #f5a7a9 - 主题色 40%
+$--color-brand-40: blanch($--color-brand, 40%) !default;
+
+// #fad3d4 - 主题色 20%
+$--color-brand-20: blanch($--color-brand, 20%) !default;
+
+// #fbdcdc - 主题色 16%
+$--color-brand-16: blanch($--color-brand, 16%) !default;
+
+// #fce4e5 - 主题色 12%
+$--color-brand-12: blanch($--color-brand, 12%) !default;
+
+// #fdeded - 主题色 8%
+$--color-brand-8: blanch($--color-brand, 8%) !default;
+
+// #fef6f6 - 主题色 4%
+$--color-brand-4: blanch($--color-brand, 4%) !default;
+
+/* brand-rgba-x 透明梯度色 */
+$--color-brand-rgba-80: rgba($--color-brand, 0.8) !default;
+$--color-brand-rgba-40: rgba($--color-brand, 0.4) !default;
+$--color-brand-rgba-20: rgba($--color-brand, 0.2) !default;
+$--color-brand-rgba-16: rgba($--color-brand, 0.16) !default;
+$--color-brand-rgba-12: rgba($--color-brand, 0.12) !default;
+$--color-brand-rgba-8: rgba($--color-brand, 0.08) !default;
+$--color-brand-rgba-4: rgba($--color-brand, 0.04) !default;
+
+/* brand 状态色 */
+// brand-hov 主题色 + 20%白
+$--color-brand-hov: tint($--color-brand, 20%) !default;
+
+// brand-pre 主题色 + 10%黑
+$--color-brand-pre: shade($--color-brand, 10%) !default;
+
+// brand-dis 禁用 主题色 40%
+$--color-brand-dis: $--color-brand-40 !default;
+
+// brand-dis 禁用 透明主题色 40%
+$--color-brand-rgba-dis: rgba($--color-brand, 40%) !default;
+
+/* Neutral 纯中性色 */
+$--color-neutral: $--color-black !default;
+// #1a1a1a - 标题文本 输入框描边选中态
+$--color-neutral-1: blanch($--color-neutral, 90%) !default;
+
+// #4d4d4d - 正常文本 输入框描边悬停态
+$--color-neutral-2: blanch($--color-neutral, 70%) !default;
+
+// #999999 - 次要文本
+$--color-neutral-3: blanch($--color-neutral, 40%) !default;
+
+// #b2b2b2 - 输入框说明文本 输入框描边正常态
+$--color-neutral-4: blanch($--color-neutral, 30%) !default;
+
+// #cccccc - 20%黑 禁用文本
+$--color-neutral-5: blanch($--color-neutral, 20%) !default;
+
+// #e0e0e0 - 禁用文本
+$--color-neutral-6: blanch($--color-neutral, 12%) !default;
+
+// #ebebeb - 8%黑 浅分割线 触底点击态2
+$--color-neutral-7: blanch($--color-neutral, 8%) !default;
+
+// #f0f0f0 - 触底悬停态1
+$--color-neutral-8: blanch($--color-neutral, 6%) !default;
+
+// #f5f5f5 - 触底悬停态2
+$--color-neutral-9: blanch($--color-neutral, 4%) !default;
+
+// #fafafa - 背景
+$--color-neutral-10: blanch($--color-neutral, 2%) !default;
+
+/* 中性反色 */
+$--color-neutral-invert: invert($--color-neutral) !default;
+
+/* Neutral 透明中性色 */
+$--color-neutral-rgba-1: rgba($--color-neutral, 0.9) !default;
+$--color-neutral-rgba-2: rgba($--color-neutral, 0.7) !default;
+$--color-neutral-rgba-3: rgba($--color-neutral, 0.4) !default;
+$--color-neutral-rgba-4: rgba($--color-neutral, 0.3) !default;
+$--color-neutral-rgba-5: rgba($--color-neutral, 0.2) !default;
+$--color-neutral-rgba-6: rgba($--color-neutral, 0.12) !default;
+$--color-neutral-rgba-7: rgba($--color-neutral, 0.08) !default;
+$--color-neutral-rgba-8: rgba($--color-neutral, 0.06) !default;
+$--color-neutral-rgba-9: rgba($--color-neutral, 0.04) !default;
+$--color-neutral-rgba-10: rgba($--color-neutral, 0.02) !default;
+
+/* Neutral-f透明中性色 */
+$--color-neutral-f-rgba-1: rgba($--color-white, 0.9) !default;
+$--color-neutral-f-rgba-2: rgba($--color-white, 0.7) !default;
+$--color-neutral-f-rgba-3: rgba($--color-white, 0.4) !default;
+$--color-neutral-f-rgba-4: rgba($--color-white, 0.3) !default;
+$--color-neutral-f-rgba-5: rgba($--color-white, 0.2) !default;
+$--color-neutral-f-rgba-6: rgba($--color-white, 0.12) !default;
+$--color-neutral-f-rgba-7: rgba($--color-white, 0.08) !default;
+$--color-neutral-f-rgba-8: rgba($--color-white, 0.06) !default;
+$--color-neutral-f-rgba-9: rgba($--color-white, 0.04) !default;
+$--color-neutral-f-rgba-10: rgba($--color-white, 0.02) !default;
+
+/* height
+-------------------------- */
+$--height-xs: 24px !default;
+$--height-sm: 28px !default;
+$--height: 32px !default;
+$--height-lg: 36px !default;
+
+/* z-index
+-------------------------- */
+$--index-normal: 1 !default;
+$--index-top: 1000 !default;
+$--index-popper: 2000 !default;
+
+/* Break-point
+-------------------------- */
+$--break-point-sm: 768px !default;
+$--break-point: 992px !default;
+$--break-point-lg: 1200px !default;
+$--break-point-xl: 1920px !default;
+
+/* Transition
+-------------------------- */
+$--transition-all: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
+$--transition-fade: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
+$--transition-fade-linear: opacity 200ms linear !default;
+$--transition-fade-ease: transform 300ms cubic-bezier(0.23, 1, 0.32, 1),
+  opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
+$--transition-border-base: border-color 0.2s
+  cubic-bezier(0.645, 0.045, 0.355, 1) !default;
+$--transition-color-base: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
+
+/* Font
+-------------------------- */
+$--font-path: 'fonts' !default;
+$--font-family: 'Segoe UI', Microsoft YaHei, Arial, Helvetica, sans-serif !default;
+$--font-size-xs: 12px !default;
+$--font-size-sm: 13px !default;
+$--font-size: 14px !default;
+$--font-size-lg: 16px !default;
+$--font-weight: 500 !default;
+$--font-line-height: 20px !default;
+$--font-color-primary: $--color-neutral-1 !default;
+$--font-color-regular: $--color-neutral-2 !default;
+$--font-color-secondary: $--color-neutral-3 !default;
+$--font-color-placeholder: $--color-neutral-4 !default;
+
+$--font-color-invert-with-brand: h-best-color-contrast(
+  $--color-brand,
+  $colors: ($--color-white, $--font-color-regular)
+) !default;
+
+/* Border
+-------------------------- */
+$--border-color: $--color-neutral-4 !default;
+$--border-color-light: $--color-neutral-8 !default;
+$--border-color-lighter: $--color-neutral-10 !default;
+$--border-base: 1px solid $--border-color !default;
+$--border-color-hov: $--color-neutral-2 !default;
+$--border-color-focus: $--color-neutral-1 !default;
+$--border-radius-sm: 2px !default;
+$--border-radius: 4px !default;
+$--border-radius-circle: 100% !default;
+
+/* Box-shadow
+-------------------------- */
+$--box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.12) !default;
+$--box-shadow-lg: 0 0 16px 0 rgba(0, 0, 0, 0.2),
+  0 16px 32px 0 rgba(0, 0, 0, 0.12) !default;
+
+/* disabled
+-------------------------- */
+$--disabled-opacity: 0.4 !default;
+$--disabled-border-color: $--color-neutral-7 !default;
+$--disabled-fill: $--color-neutral-9 !default;
+$--disabled-color: $--color-neutral-5 !default;
+$--disabled-icon-color: $--color-neutral-5 !default;
+
+/* icon
+-------------------------- */
+$--icon-width: 24px !default;
+$--icon-height: 24px !default;
+$--icon-font-size: 24px !default;
+$--icon-color: $--font-color-regular !default;
+$--icon-fill: $--color-neutral-8 !default;
+$--icon-fill-pre: $--color-neutral-6 !default;
+
+/* input
+-------------------------- */
+$--input-fill: $--color-neutral-invert;
+$--input-border: $--border-base !default;
+$--input-border-color: $--border-color !default;
+$--input-border-radius: $--border-radius-sm !default;
+$--input-border-color-hov: $--border-color-hov !default;
+$--input-border-color-focus: $--border-color-focus !default;
+$--input-color: $--font-color-regular !default;
+$--input-color-focus: $--color-neutral-1 !default;
+$--input-placeholder-color: $--color-neutral-4 !default;
+$--input-disabled-fill: $--disabled-fill !default;
+$--input-disabled-border: $--disabled-border-color !default;
+$--input-disabled-color: $--disabled-color !default;
+
+/* option
+-------------------------- */
+$--option-fill: $--color-white !default;
+$--option-fill-hov: $--color-neutral-9 !default;
+$--option-fill-pre: $--color-neutral-7 !default;
+$--option-selected-fill: $--color-brand !default;
+$--option-selected-fill-hov: $--color-brand !default;
+$--option-selected-fill-pre: $--color-brand !default;
+$--option-disabled-fill: $--color-white !default;
+$--option-color: $--font-color-regular !default;
+$--option-hov-color: h-best-color-contrast(
+  $--option-fill-hov,
+  $colors: ($--color-white, $--option-color)
+) !default;
+$--option-pre-color: h-best-color-contrast(
+  $--option-fill-pre,
+  $colors: ($--color-white, $--option-color)
+) !default;
+$--option-selected-color: h-best-color-contrast(
+  $--option-selected-fill,
+  $colors: ($--color-white, $--option-color)
+) !default;
+$--option-disabled-color: $--disabled-color !default;
+
+/* modal
+-------------------------- */
+$--modal-fill: rgba($--color-neutral-2, 0.4) !default;
+
+/* Menu (Menu 改为公共变量，可以在 HUI-Pro 中使用)
+-------------------------- */
+// 深色背景
+$--menu-item-fill: #262626 !default; // 菜单背景色
+$--menu-item-color: $--color-neutral-f-rgba-3 !default; // 菜单项 - 文字颜色
+$--menu-item-hover-fill: $--color-neutral-f-rgba-7 !default; // 菜单项 hover - 背景色
+$--menu-item-hover-color: $--color-neutral-f-rgba-2 !default; // 菜单项 hover - 文字颜色
+$--menu-item-pre-fill: $--color-neutral-f-rgba-9 !default; // 菜单项点击 - 背景色
+$--menu-item-active-fill: $--color-neutral-rgba-3 !default; // 菜单项选中 - 背景色
+$--menu-item-active-color: $--color-neutral-f-rgba-1 !default; // 菜单项选中 - 文字颜色
+$--menu-sub-fill: $--color-neutral-rgba-4 !default; // 子菜单 - 背景色
+$--menu-dividing-fill: $--color-neutral-f-rgba-6 !default; // 菜单收起时，菜单项标题下的分割线颜色
+// 浅色背景
+// $--menu-item-fill: #f0f0f0 !default; // 菜单背景色
+// $--menu-item-color: $--color-neutral-2 !default; // 菜单项 - 文字颜色
+// $--menu-item-hover-fill: $--color-neutral-8 !default; // 菜单项 hover - 背景色
+// $--menu-item-hover-color: $--color-neutral-1 !default; // 菜单项 hover - 文字颜色
+// $--menu-item-pre-fill: $--color-neutral-6 !default; // 菜单项点击 - 背景色
+// $--menu-item-active-fill: $--color-neutral-6 !default; // 菜单项选中 - 背景色
+// $--menu-item-active-color: $--color-neutral-2 !default; // 菜单项选中 - 文字颜色
+// $--menu-sub-fill: $--color-neutral-7 !default; // 子菜单 - 背景色
+// $--menu-dividing-fill: $--color-neutral-5 !default; // 菜单收起时，菜单标题下的分割线颜色

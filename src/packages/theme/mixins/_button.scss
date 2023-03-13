@@ -1,0 +1,47 @@
+@mixin button-size(
+  $padding-vertical,
+  $padding-horizontal,
+  $font-size,
+  $border-radius
+) {
+  padding: $padding-vertical $padding-horizontal;
+  border-radius: $border-radius;
+  font-size: $font-size;
+}
+
+@mixin button-variant($color, $background-color, $border-color) {
+  border-color: $border-color;
+  background-color: $background-color;
+  color: $color;
+  &:hover:not(.is-disabled) {
+    border-color: tint($border-color, $--button-hover-tint-percent);
+    background: tint($background-color, $--button-hover-tint-percent);
+    color: $color;
+  }
+  &:active:not(.is-disabled) {
+    border-color: tint($border-color, $--button-active-shade-percent);
+    background: tint($background-color, $--button-active-shade-percent);
+    color: $color;
+    outline: none;
+  }
+  &.is-active {
+    border-color: tint($border-color, $--button-active-shade-percent);
+    background: tint($background-color, $--button-active-shade-percent);
+    color: $color;
+  }
+  @include when(plain) {
+    border: $--border-base;
+    background: $--button-default-fill;
+    color: $--button-default-color;
+    &:hover:not(.is-disabled) {
+      border-color: tint($border-color, $--button-hover-tint-percent);
+      background: $--button-default-fill;
+      color: tint($border-color, $--button-active-shade-percent);
+    }
+    &:active:not(.is-disabled) {
+      border-color: tint($border-color, $--button-active-shade-percent);
+      background: $--button-default-fill;
+      color: tint($border-color, $--button-active-shade-percent);
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@import 'config';
+
+/* BEM support Func
+ -------------------------- */
+@function selector-to-string($selector) {
+  $selector: inspect($selector);
+  $selector: str-slice($selector, 2, -2);
+  @return $selector;
+}
+
+@function contains-modifier($selector) {
+  $selector: selector-to-string($selector);
+  @if str-index($selector, $modifier-separator) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+@function contain-when-flag($selector) {
+  $selector: selector-to-string($selector);
+  @if str-index($selector, '.' + $state-prefix) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+@function contain-pseudo-class($selector) {
+  $selector: selector-to-string($selector);
+  @if str-index($selector, ':') {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+@function hit-all-special-nest-rule($selector) {
+  @return contains-modifier($selector) or contain-when-flag($selector) or
+    contain-pseudo-class($selector);
+}
