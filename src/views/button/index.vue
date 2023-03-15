@@ -1,7 +1,7 @@
 <template>
   <div class="button">
+    <h3 class="page-title">Button 按钮</h3>
     <div>
-      <el-badge :value="14"> <el-button>default</el-button></el-badge>
       <el-button>default</el-button>
       <el-button type="primary">primary</el-button>
       <el-button type="success">success</el-button>

@@ -1,5 +1,6 @@
 <template>
   <div class="card">
+    <h3 class="page-title">Card 卡片</h3>
     <base-card radius="0" height="auto">
       <div style="width: 400px; height: 300px">
         <div class="card-header">

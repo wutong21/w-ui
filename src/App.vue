@@ -8,6 +8,7 @@
         <nav>
           <router-link to="/">Button 按钮</router-link>
           <router-link to="/card">Card 卡片</router-link>
+          <router-link to="/badge">Badge 标记</router-link>
         </nav>
       </div>
       <div class="content-page">

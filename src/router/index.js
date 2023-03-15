@@ -17,6 +17,11 @@ const router = new VueRouter({
       name: 'card',
       component: () => import('../views/card/index.vue'),
     },
+    {
+      path: '/badge',
+      name: 'badge',
+      component: () => import('../views/badge/index.vue'),
+    },
   ],
 });
 
