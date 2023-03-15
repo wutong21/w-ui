@@ -1,28 +1,68 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
+<script></script>
 
 <template>
   <div id="app">
-    <header>
-      <div class="wrapper">
-        <HelloWorld msg="业务组件库" />
-
+    <div class="wrapper">
+      <div class="sidebar-menu">
         <nav>
-          <router-link to="/">Home</router-link>
-          <!-- <router-link to="/about">About</router-link> -->
           <router-link to="/button">Button 按钮</router-link>
           <router-link to="/card">Card 卡片</router-link>
         </nav>
       </div>
-    </header>
-
-    <router-view />
+      <div class="content-page">
+        <router-view />
+      </div>
+    </div>
   </div>
 </template>
 
-<style scoped>
-header {
+<style lang="scss" scoped>
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f3f6f8;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  // height: 100vh;
+  overflow: auto;
+  background: #fff;
+  width: 220px;
+}
+
+.content-page {
+  height: 100vh;
+  min-height: 100%;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  overflow: auto;
+  padding: 35px;
+}
+nav a {
+  display: inline-block;
+  padding: 0 1rem;
+  border-left: 1px solid var(--color-border);
+}
+
+nav a:first-of-type {
+  border: 0;
+}
+nav a.router-link-exact-active {
+  color: var(--color-text);
+}
+
+nav a.router-link-exact-active:hover {
+  background-color: transparent;
+}
+
+/* header {
   line-height: 1.5;
   max-height: 100vh;
 }
@@ -39,48 +79,17 @@ nav {
   margin-top: 2rem;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
 
 @media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
 
   nav {
     text-align: left;
-    margin-left: -1rem;
     font-size: 1rem;
 
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>
