@@ -1,11 +1,12 @@
-<script></script>
+<script setup></script>
 
 <template>
   <div id="app">
     <div class="wrapper">
       <div class="sidebar-menu">
+        <div class="title">WUI</div>
         <nav>
-          <router-link to="/button">Button 按钮</router-link>
+          <router-link to="/">Button 按钮</router-link>
           <router-link to="/card">Card 卡片</router-link>
         </nav>
       </div>
@@ -30,66 +31,63 @@
 .sidebar-menu {
   display: flex;
   flex-direction: column;
-  // height: 100vh;
   overflow: auto;
   background: #fff;
   width: 220px;
+  .title {
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    color: #333;
+    position: relative;
+    right: 10%;
+  }
 }
 
 .content-page {
   height: 100vh;
   min-height: 100%;
+  // max-width: 800px;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
   overflow: auto;
   padding: 35px;
+  div {
+    max-width: 800px;
+  }
 }
+
+nav {
+  display: flex;
+  flex-direction: column;
+}
+
 nav a {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-/* header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
   font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  position: relative;
+  cursor: auto;
+  /* color: #ccc; */
+  padding: 8px 20px;
 }
 
+nav a:hover {
+  cursor: pointer;
+  background-color: hsla(160, 100%, 37%, 0.2);
+}
 
+a,
+.green {
+  text-decoration: none;
+  color: var(--color-text);
+  transition: 0.4s;
+}
 
-
-@media (min-width: 1024px) {
-
-  nav {
-    text-align: left;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-} */
+nav a.router-link-exact-active {
+  color: hsla(160, 100%, 37%, 1);
+  font-weight: 700;
+}
 </style>

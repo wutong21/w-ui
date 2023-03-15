@@ -8,28 +8,51 @@
   font-weight: normal;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+.relax-document .document-title {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #666;
+  margin-bottom: 20px
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.relax-document .document-title h4 {
+  font-weight: 400
 }
 
-@media (min-width: 1024px) {
-  /* body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  } */
+.relax-document table {
+  width: 100%;
+  border-collapse: collapse
 }
+
+.relax-document table.document-api {
+  margin-bottom: 20px
+}
+
+.relax-document table thead th {
+  background-color: #e5eaee;
+  padding: 10px;
+  color: #666;
+  border-bottom: 2px solid #dae1e6
+}
+
+.relax-document table td {
+  padding: 10px;
+  background: #fff;
+  border-bottom: 1px solid #e5eaee
+}
+
+.relax-document table td:nth-child(3) {
+  /* color: #f81d22; */
+  width: 15%
+}
+
+.relax-document table td:first-child {
+  /* color: #0b8235; */
+  width: 15%
+}
+
+.relax-document table td:nth-child(4) {
+  /* color: #008dff */
+}
+
+

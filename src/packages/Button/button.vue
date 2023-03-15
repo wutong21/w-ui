@@ -25,19 +25,9 @@
     @click="handleClick"
     @mouseover.self="handleMouseover"
   >
-    <!-- <i class="el-icon-loading" v-if="loading" @click="handleInnerClick"></i> -->
-    <el-load-icon
-      v-if="loading"
-      class="h-icon-loading"
-      @click="handleInnerClick"
-    />
-    <i v-if="icon && !loading" :class="icon" />
-    <i
-      v-if="iconBorder && !loading"
-      :class="iconBorder"
-      @click="handleInnerClick"
-    />
-    <!-- <i :class="outicon" v-if="outicon" @click="handleInnerClick"></i> -->
+    <!-- <el-load-icon v-if="loading" class="h-icon-loading" @click="handleInnerClick" /> -->
+    <!-- <i v-if="icon && !loading" :class="icon" /> -->
+    <!-- <i v-if="iconBorder && !loading" :class="iconBorder" @click="handleInnerClick" /> -->
     <span v-if="$slots.default" @click="handleInnerClick">
       <slot />
     </span>
@@ -63,7 +53,7 @@ export default {
       type: String,
       default: null
     },
-    icon: { type: String, default: null },
+    // icon: { type: String, default: null },
     nativeType: {
       type: String,
       default: 'button'
@@ -97,32 +87,32 @@ export default {
   data() {
     return {
       labelTitle: ''
-    };
+    }
   },
 
   computed: {
     buttonDisabled() {
-      return this.disabled || (this.elForm || {}).disabled;
+      return this.disabled || (this.elForm || {}).disabled
     }
   },
 
   methods: {
     handleInnerClick(e) {
       if (this.disabled) {
-        e.stopPropagation();
+        e.stopPropagation()
       }
     },
 
     handleClick(evt) {
-      this.$emit('click', evt);
+      this.$emit('click', evt)
     },
 
     handleMouseover(e) {
-      const t = e.target;
+      const t = e.target
       // 如果设置了默认的title就用默认的
-      if (this.$attrs.title) return;
-      this.labelTitle = t.scrollWidth > t.offsetWidth ? t.innerText : '';
+      if (this.$attrs.title) return
+      this.labelTitle = t.scrollWidth > t.offsetWidth ? t.innerText : ''
     }
   }
-};
+}
 </script>

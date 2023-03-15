@@ -1,32 +1,21 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-  mode: "hash",
+  mode: 'hash',
   base: import.meta.env.BASE_URL,
   routes: [
     {
-      path: "/",
-      name: "home",
-      component: HomeView,
+      path: '/',
+      name: 'button',
+      component: () => import('../views/button/index.vue'),
     },
     {
-      path: "/about",
-      name: "about",
-      component: () => import("../views/AboutView.vue"),
-    },
-    {
-      path: "/button",
-      name: "button",
-      component: () => import("../views/button/index.vue"),
-    },
-    {
-      path: "/card",
-      name: "card",
-      component: () => import("../views/card/index.vue"),
+      path: '/card',
+      name: 'card',
+      component: () => import('../views/card/index.vue'),
     },
   ],
 });

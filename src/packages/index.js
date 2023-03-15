@@ -1,9 +1,11 @@
 import Button from "./Button";
 import Card from "./Card";
+import Badge from "./Badge";
 
 const components = {
   Button,
   Card,
+  Badge
 };
 
 const install = (Vue) => {

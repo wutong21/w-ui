@@ -8,8 +8,8 @@
       '--width': $attrs.width || '100%',
       '--radius': $attrs.radius || '12px',
       '--shadow': $attrs.shadow || '0px 2px 16px 0px #f0f7fd',
-      '--min-width': $attrs['min-width'] || '376px',
-      '--min-height': $attrs['min-height'] || '160px',
+      '--min-width': $attrs['min-width'] || 'auto',
+      '--min-height': $attrs['min-height'] || 'auto'
     }"
     class="base-card"
   >
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: 'BaseCard',
+  name: 'BaseCard'
 }
 </script>
 <style lang="scss" scoped>
